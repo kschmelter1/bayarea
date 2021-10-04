@@ -1,0 +1,143 @@
+.main-title {
+  @extend %block-margin;
+  position: relative;
+  #breadcrumbs {
+    font-weight: 500;
+    position: relative;
+    margin-bottom: 2.5rem;
+    font-size: 0.813rem;
+    & > span {
+      //opacity: .7;
+      color: rgba($primary, .7);
+      .rt-time {
+        color: $primary;
+      }
+    }
+    a {
+      color: inherit;
+      &:hover {
+        color: $primary;
+      }
+    }
+    &:after {
+      @extend %pseudo;
+      height: 2px;
+      background-color: $yellow;
+      width: 25px;
+      bottom: -1rem;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+  h1 {
+    font-size: 6.875rem;
+    padding-bottom: 2rem;
+    border-bottom: solid 2px rgba($primary, .2);
+    @include media-breakpoint-down(lg) {
+      font-size: 5rem;
+    }
+    @include media-breakpoint-down(md) {
+      font-size: 50px;
+    }
+    @include media-breakpoint-down(sm) {
+      font-size: 36px;
+    }
+  }
+}
+
+.single .main-title {
+  h1 {
+    font-size: 2.875rem;
+    border-bottom: 0;
+  }
+}
+
+#interior-nav {
+  align-items: flex-start;
+  position: sticky;
+  //margin-top: -7.5rem;
+  margin-top: -10.5rem;
+  margin-bottom: 9rem;
+  top: 5rem;
+  height: 0;
+  top: 300px;
+  width: calc(#{$column} * 2);
+  padding: 0 2rem;
+  z-index: 100;
+  @media only screen and (max-height: 800px) {
+    display: none !important;
+  }
+  a {
+    color: rgba($primary, .5);
+    font-weight: 500;
+    font-size: 0.813rem;
+    position: relative;
+    &:not(:last-child) {
+      margin-bottom: .5rem;
+    }
+    &::after {
+      @extend %pseudo;
+      top: -.25rem;
+      bottom: -.25rem;
+      left: -.5rem;
+      right: -.5rem;
+      background-color: rgba(255,255,255,.75);
+      z-index: -1;
+      border-radius: 5px;
+      border-top-left-radius: 0;
+    }
+    &::before {
+      @extend %pseudo;
+      left: -1rem;
+      width: 3px;
+      top: 0;
+      bottom: 0;
+      background-color: transparent;
+    }
+    &:hover {
+      color: $primary;
+    }
+    &.active {
+      color: $primary;
+      &::before {
+        background-color: $secondary;
+      }
+    }
+  }
+}
+
+#page-nav {
+  .navbar-nav {
+    padding: 0;
+    //justify-content: center;
+    flex-wrap: wrap;
+    li {
+      &:not(:last-child) {
+        margin-right: .5rem;
+      }
+      a {
+        color: rgba($primary, .5);
+      }
+    }
+    .dropdown-menu {
+      border: 0;
+      box-shadow: 0px 2px 5px 0px rgba($primary, .5);
+      margin-top: -1px;
+      .nav-item {
+        margin: 0 !important;
+        text-align: center;
+        a {
+          width: 100%;
+          padding: 1.15rem 1.25rem;
+        }
+      }
+    }
+  }
+  .btn {
+
+    font-size: 1rem;
+    &.active {
+      color: rgba($primary, .5);
+    }
+  }
+}

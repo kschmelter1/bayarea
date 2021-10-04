@@ -1,0 +1,53 @@
+.block-card {
+  .inner {
+    background-color: $ba-grey;
+    border-radius: 10px;
+    border-top-left-radius: 0;
+    padding: 6rem calc(#{$column} / 1.5) 3rem;
+    margin: 0 $column;
+    @include media-breakpoint-down(md) {
+      margin: 0;
+      padding: 2rem calc(#{$column} / 2) 1.5rem;
+    }
+    .row {
+      margin: 0 calc(#{$column} / -8);
+      & > div {
+        padding: 0 calc(#{$column} / 4);
+      }
+      &:not(:last-child) {
+          padding-bottom: 3rem;
+          margin-bottom: 3rem;
+          //border-bottom: solid 1px rgba($primary, .2);
+          position: relative;
+          &::after  {
+            @extend %pseudo;
+            position: absolute;
+            left: calc(#{$column} / 4);
+            right: calc(#{$column} / 4);
+            bottom: 0;
+            height: 1px;
+            background-color: rgba($primary, .2);
+          }
+        }
+
+    }
+    a  {
+      color: rgba($primary, .7);
+    }
+    p {
+      &:not(:last-child) {
+        margin-bottom: 1.5rem;
+      }
+    }
+    h3 {
+      margin-bottom: 2rem;
+    }
+    .group {
+      &:not(:last-child) {
+        padding-bottom: 1rem;
+        margin-bottom: 2rem;
+        border-bottom: solid 1px rgba($primary, .2);
+      }
+    }
+  }
+}

@@ -1,0 +1,59 @@
+{
+    "key": "group_609a868e2ca30",
+    "title": "Block Nav Anchor",
+    "fields": [
+        {
+            "key": "field_60ad53a80ed13",
+            "label": "Anchor",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_609a86bc4ccd4",
+            "label": "Section Anchor",
+            "name": "section_anchor",
+            "type": "text",
+            "instructions": "Used for secondary page navigation. Type the name of the section title and an internal link will be made automatically.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "!=",
+                "value": "acf\/hero"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1623683216
+}

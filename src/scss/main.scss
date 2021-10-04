@@ -1,0 +1,11 @@
+html {
+  scroll-behavior: smooth;
+}
+
+.modal-content {
+  padding: 2rem;
+  border-radius: 10px;
+}
+.modal-dialog {
+  max-width: calc(500px + 4rem);
+}

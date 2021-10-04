@@ -1,0 +1,100 @@
+.block-cta {
+  @extend %block-margin;
+  margin-bottom: calc(#{$block-margin} * 2);
+  overflow: hidden;
+  @include media-breakpoint-down(md) {
+    margin-bottom: 3rem;
+  }
+  & > .row {
+    @include media-breakpoint-down(md) {
+      flex-direction: column-reverse;
+    }
+    & > div {
+      &:first-child  {
+        .content {
+          padding-top:  $block-margin;
+          padding-bottom: $block-margin;
+        }
+        &::before {
+          @extend %pseudo;
+          background-color: $primary;
+          left: calc(#{$column} * -2);
+          right: calc(#{$column} * -2);
+          top: 0;
+          bottom: 0;
+          z-index: -1;
+          @include media-breakpoint-down(md) {
+            left: calc(#{$column} * -1);
+            right: calc(#{$column} * -1);
+          }
+        }
+        &:not(:last-child) {
+          @include media-breakpoint-down(md) {
+            margin-top: calc(#{$column} * -2);
+            .content {
+              padding-top:  calc(#{$column} * 2 + #{$block-margin});
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .text {
+    a {
+      color: $yellow;
+      text-decoration: underline;
+      font-weight: bold;
+      transition: color .25s ease;
+      &:hover {
+        color: $secondary;
+      }
+    }
+  }
+
+  .img-wrap  {
+    margin-right: calc(#{$column} * -2);
+    margin-top: $block-margin;
+    .inner {
+      padding-left: $column;
+      padding-left: calc(#{$column} / 2);
+      position: relative;
+      img  {
+        border-bottom-left-radius: 10px;
+        width: 100%;
+        z-index: 5;
+        position: relative;
+      }
+      &:after {
+        @extend %pseudo;
+        background-color: $yellow;
+        top: 30%;
+        z-index: 1;
+        border-radius: 10px;
+        border-top-left-radius: 0;
+        left: 0;
+        //left: calc(#{$column} / -2);
+        bottom: calc(#{$column} / -2);
+        right: calc(#{$column} * 3);
+      }
+    }
+
+    @include media-breakpoint-down(md) {
+      margin-top: 0;
+      margin-right: calc(#{$column} * -1);
+      margin-left: calc(#{$column} * -1);
+      margin-bottom: 0;
+      .inner {
+        padding-left: 0;
+        padding-bottom: calc(#{$column} * 2);
+      }
+      &::after {
+        left: 0;
+        border-bottom-right-radius: 0;
+        right: calc(#{$column} * 2);
+        bottom: 0;
+      }
+    }
+
+  }
+}

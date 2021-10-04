@@ -1,0 +1,155 @@
+%evo-month {
+  font-family: $header-font;
+  font-size: 36px;
+  font-weight: normal;
+  color: $primary !important;
+  text-transform: capitalize;
+  margin-bottom: .75rem;
+}
+
+.ajde_evcal_calendar {
+  #evcal_head {
+    .evo_month_title {
+      @extend %evo-month;
+    }
+  }
+  #evcal_list {
+    border: 0 !important;
+    overflow: visible;
+    .evcal_month_line, .evcal_month_line p {
+      @extend %evo-month;
+    }
+    .sep_month_events {
+      border: 0 !important;
+      overflow: visible;
+    }
+    .eventon_list_event {
+      overflow: visible;
+      box-shadow: 0px 0px 30px 0px rgba(#003559, .1);
+      border-radius: 5px;
+      background-color: #fff !important;
+      &:hover {
+        box-shadow: 0 0 15px rgba(5, 33, 71, .5);
+        transition: all .25s ease;
+      }
+      .desc_trig.evcal_list_a {
+        border: 0 !important;
+        border-radius: 5px;
+        background-color: #fff !important;
+        min-height: 125px;
+        display: flex;
+        align-items: center;
+
+        &::after {
+          display: none;
+        }
+        .evcal_event_title {
+          color: $primary !important;
+          text-transform: capitalize;
+        }
+        .evcal_desc_info {
+          opacity: .7;
+          color: $primary !important;
+          font-family: $body-font;
+          font-size: 13px;
+          & > *, em {
+            color: $primary !important;
+          }
+          .evcal_location {
+            &::before {
+              @extend %fa;
+              content: '\f041';
+            }
+          }
+          .evcal_time {
+            &::before {
+              @extend %fa;
+              content: '\f017';
+            }
+          }
+        }
+        .evcal_cblock {
+          position: relative;
+          top: 0; left: 0;
+          padding: 0 1rem;
+          .evo_start {
+            color: #fff;
+            background-color: $secondary;
+            width: 106px;
+            height: 95px;
+            border-radius: 10px;
+            font-family: garamond;
+            text-transform: uppercase;
+            display: flex;
+            flex-direction: column-reverse;
+            justify-content: center;
+            align-items: center;
+            .month {
+              font-size: 1rem !important;
+            }
+            .date {
+              line-height: .8;
+              font-size: 2.25rem;
+              font-weight: normal;
+            }
+          }
+        }
+        .evcal_desc.evo_info {
+          margin: 0;
+          padding-top: 0;
+          padding-left: .5rem; //calc(106px + 3rem);
+          .evcal_desc3 {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+.event_description .bordb, #evcal_list .bordb, .eventon_events_list .eventon_list_event .event_description, .bordr, #evcal_list, .evo_pop_body .bordb {
+  border: 0 !important;
+}
+.evcal_evdata_row .evcal_evdata_cell h2, .evcal_evdata_row .evcal_evdata_cell h3, .evorow .evo_clik_row h3, .evcal_evdata_row .evcal_evdata_cell h3 a {
+  text-transform: uppercase;
+}
+
+.evorow.tb .tbrow, .evorow .tb .tbrow {
+  .evcal_col50 {
+    &:first-child {
+      width: 35%;
+    }
+    &:not(:first-child) {
+      width: 65%;
+    }
+    @include media-breakpoint-down(md) {
+      display: block;
+      width: 100% !important;
+    }
+  }
+}
+
+.evcal_evdata_row .evcal_evdata_cell p {
+  font-weight: 400 !important;
+  font-size: 1rem !important;
+  line-height: 1.7 !important;
+  color: rgba($primary, .7) !important;
+  font-style: normal !important;
+}
+
+.evcal_evdata_row.evcal_event_details .evcal_evdata_cell p {
+  font-size: 1rem !important;
+  line-height: 1.7 !important;
+  font-weight: 400 !important;
+}
+
+.evcal_evdata_icons, .evo_card_row_end.evcal_close {
+  display: none !important;
+}
+.evcal_evdata_row .evcal_evdata_cell, .evo_metarow_learnMICS .evcal_col50 .evcal_evdata_cell {
+  padding-left: 0 !important;
+}
+
+.evcal_evdata_row .evcal_evdata_cell h2, .evcal_evdata_row .evcal_evdata_cell h3, .evorow .evo_clik_row h3, .evcal_evdata_row .evcal_evdata_cell h3 a {
+  color: $primary !important;
+}

@@ -1,0 +1,51 @@
+form.is-search-form {
+  input.is-search-input {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+  button.is-search-submit {
+    span.is-search-icon {
+      background-color: $secondary !important;
+      color: #fff !important;
+      border-color: $secondary !important;
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+      transition: all .25s ease;
+      &:hover {
+        background-color: darken($secondary, 10%) !important;
+        border-color: darken($secondary, 10%) !important;
+      }
+      svg path {
+        fill: #fff !important;
+      }
+    }
+  }
+}
+
+.modal {
+  z-index: 105000;
+}
+
+.wp-block-columns {
+  &.no-collapse {
+    @include media-breakpoint-down(md) {
+      margin-left: -.5rem;
+      margin-right: -.5rem;
+      & > div {
+        flex: 0 0 calc(100% / 3)  !important;
+        margin: 0  !important;
+        padding-left: .5rem;
+        padding-right: .5rem;
+      }
+      .wp-block-getwid-video-popup {
+        p {
+          margin: 0;
+        }
+        .wp-block-getwid-video-popup__button {
+          transform: scale(.5, .5);
+        }
+      }
+    }
+
+  }
+}

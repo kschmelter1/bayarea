@@ -1,0 +1,27 @@
+h2, .h2 {
+  font-size: clamp(27px, 3.25vw, 4.375rem);
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+h3, .h3 {
+  @include media-breakpoint-down(sm) {
+    font-size: 20px;
+  }
+}
+blockquote {
+  font-size: 2.25rem;
+  font-family: $header-font;
+  line-height: 1;
+  p {
+    line-height: 1.3 !important;
+  }
+}
+
+a[href^="tel:"] {
+  white-space: nowrap !important;
+}
+body {
+  @include media-breakpoint-down(xs) {
+    font-size: .9rem;
+  }
+}

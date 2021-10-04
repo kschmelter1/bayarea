@@ -1,0 +1,195 @@
+.block-press-releases {
+  @extend %block-margin;
+  .column-heading {
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+    border-bottom: solid 2px rgba($primary, .2);
+  }
+  label {
+    & > span {
+      font-weight: bold;
+      font-size: 13px;
+      color: rgba($primary, .7);
+      margin-bottom: .5rem;
+      display: block;
+    }
+  }
+  input, select {
+    font-size: 22px;
+    padding: 1rem;
+    height: auto;
+  }
+  .select-wrapper {
+    margin-bottom: 2rem;
+    div {
+      position: relative;
+      &::after {
+        @extend %fa;
+        content: '\f078';
+        display: block;
+        position: absolute;
+        right: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        color: rgba($primary, .7);
+        font-weight: bold;
+        pointer-events: none;
+      }
+      select {
+        -webkit-appearance: none;
+      }
+    }
+  }
+  .filters {
+    &-search {
+      margin-bottom: 2rem;
+
+      .btn {
+        font-weight: 300;
+        color: $primary;
+        padding-left: .75em;
+        padding-right: .75em;
+        &:not(.a-btn) {
+          background-color: $light;
+          &:hover {
+            background-color: darken($light, 15%);
+          }
+        }
+      }
+
+      .search-label {
+        margin-bottom: 1.5rem;
+      }
+    }
+    &-sort {
+      padding-right: calc(#{$column} / 2);
+    }
+  }
+  #press-list {
+      tbody {
+        tr {
+          &:not(:last-child) {
+            .single-doc {
+              margin-bottom: 2rem;
+            }
+          }
+        }
+      }
+      .sorting.sorting_asc, .sorting.sorting_desc  {
+        position: absolute;
+        width: auto;
+        right: 0;
+        top: -2.5rem;
+      }
+  }
+  .single-press {
+    border-radius: 5px;
+    box-shadow: 0px 0px 30px 0px rgba(#003559, .1);
+    background-color: #fff;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    ////
+    padding-left: 1.5rem;
+    &:hover {
+      text-decoration: none;
+      box-shadow: 0 0 15px rgba(5, 33, 71, .5);
+      transition: all .25s ease;
+    }
+    & > i {
+      flex: 0 0 4rem;
+      text-align: center;
+    }
+    .content {
+      flex-grow: 1;
+    }
+    .meta {
+      font-weight: bold;
+      font-size: 13px;
+      margin-bottom: .25rem;
+      color: rgba($primary, .7);
+    }
+    .date {
+      background-color: $secondary;
+      color: #fff;
+      flex: 0 0 106px;
+      width: 106px;
+      height: 95px;
+      border-radius: 10px;
+      margin-right: calc(#{$column} / 4);
+      font-size: 1rem;
+      //font-family: $header-font;
+      font-family: garamond;
+      text-transform: uppercase;
+      // Removing per client request
+      display: none !important;
+      span:last-child {
+        line-height: .8;
+        font-size: 2.25rem;
+      }
+    }
+    .content {
+      h3 {
+        font-family: $body-font;
+        font-size: 1.188rem;
+        color: $primary;
+      }
+
+    }
+  }
+
+  #press-list_wrapper {
+    & > .row {
+      &:first-child {
+        display: none;
+      }
+      &:last-child {
+        & > div {
+          &:first-child {
+            display: none;
+          }
+          &:last-child {
+            flex: 0 0 100%;
+            max-width: 100%;
+            justify-content: center;
+            text-align: center;
+          }
+        }
+      }
+    }
+    .dataTables_paginate.paging_simple_numbers {
+      text-align: center;
+      border-top: solid 2px rgba($primary, .2);
+      margin-top: 3rem;
+      .pagination {
+        list-style-type: none;
+        padding: 2rem 0;
+        display: flex;
+        justify-content: center;
+        .paginate_button {
+          margin: 0 .5rem;
+          @include media-breakpoint-down(md) {
+            margin: 0 .25rem;
+          }
+          a {
+            @extend .btn;
+            @extend .btn-sm;
+            @extend .btn-default;
+            @include media-breakpoint-down(md) {
+              padding: .5em .5em;
+            }
+          }
+          &:last-child, &:first-child {
+            a {
+              @extend .btn-white;
+            }
+          }
+          &.active {
+            a {
+              @extend .btn-secondary;
+            }
+          }
+        }
+      }
+    }
+  }
+}

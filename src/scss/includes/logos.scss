@@ -1,0 +1,38 @@
+.logo-slider {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  background-color: #EDF2F8;
+  text-align: center;
+  padding-left: calc(#{$column} / 2);
+  padding-right: calc(#{$column} / 2);
+  .logo {
+    height: 110px;
+    //width: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1rem;
+    margin: 0 auto;
+    @include media-breakpoint-down(lg) {
+      padding: 0 2rem;
+    }
+
+    img {
+      object-fit: contain;
+      max-height: 100%;
+      filter:grayscale(100%);
+      transition: all .25s ease;
+      @include media-breakpoint-down(lg) {
+        max-width: calc(100% - 4rem);
+      }
+      &:hover {
+        filter: grayscale(0);
+      }
+    }
+  }
+  .swiper {
+    &-wrapper {
+      align-items: center;
+    }
+  }
+}

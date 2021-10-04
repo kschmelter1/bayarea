@@ -1,0 +1,132 @@
+%btn {
+  border: 0;
+  border-radius: 5px;
+  @extend %transition;
+  line-height: 1;
+  //padding: .4rem .5rem;
+  padding: 1.25em 1.75em;
+  font-weight: 300;
+  font-size: 1.188rem;
+  //padding: .5rem .5rem .4rem;
+  color:  #fff;
+  text-align: center;
+  text-decoration: none !important;
+  &[type=button] {
+    -webkit-appearance: none;
+  }
+}
+
+
+.btn {
+  @extend %btn;
+  &-lg {
+    //font-size: 1.188rem;
+  //  font-weight: 300;
+  //  padding: 1em 1.5em;
+  }
+  &-sm {
+    padding: .5em 1em;
+    font-weight: 400;
+    font-size: inherit;
+    &.menu-item {
+      .nav-link {
+        @extend .btn-sm;
+      }
+    }
+  }
+  &.menu-item {
+    background-color: transparent !important;
+    .nav-link {
+      @extend %btn;
+      &:hover {
+        color: #fff !important;
+      }
+    }
+  }
+  &-secondary {
+    .nav-link {
+      @extend .btn-secondary;
+    }
+  }
+  &-light {
+    background-color: #fff;
+    color: rgba($dark, .5);
+    &:hover {
+      background-color: #E7ECF2;
+      color: $dark;
+    }
+    &.active {
+      background-color: #E7ECF2 !important;
+    }
+  }
+  &-white {
+    background-color: #fff;
+    color: $primary;
+    &:hover {
+      background-color: #E7ECF2;
+      color: $primary;
+    }
+    &.active {
+      background-color: #E7ECF2 !important;
+    }
+  }
+
+  &-default {
+    background-color: #E7ECF2;
+    color: $primary;
+    &:hover {
+      background-color: darken($light, 15%);
+      color: $primary;
+    }
+    &.active {
+      background-color: darken($light, 15%) !important;
+    }
+  }
+}
+
+.hero-btn {
+  padding: 1rem 0;
+  color: $primary;
+  border-radius: 10px;
+  box-shadow: 0 0 30px rgba(#052147, .1);
+  transition:  all .25s ease;
+  &:hover {
+    text-decoration: none;
+    box-shadow: 0 0 15px rgba(#052147, .5);
+  }
+  .icon {
+    flex: 0 0 30%;
+    max-width: 30%;
+    background-color: rgba($secondary, .25);
+    //padding-top: 100%;
+    border-radius: 10px;
+    margin: 0 1rem;
+    color: $secondary;
+    i {
+      position: absolute;
+      top:  50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 3.125rem;
+    }
+  }
+  &-text {
+    flex: 0 0 calc(70% - 4rem);
+    .hero-btn-title {
+      font-weight: bold;
+      font-size: 1.188rem;
+      line-height: 1.3;
+      strong, b {
+        font-weight: bold;
+        color: $secondary;
+      }
+    }
+    .hero-btn-text {
+      font-size: 0.688rem;
+    }
+  }
+  & > i {
+    flex: 0 0 1.5rem;
+    text-align: center;
+  }
+}

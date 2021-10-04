@@ -1,0 +1,66 @@
+/**********
+ * Layout *
+ **********/
+
+// Container Fluid Padding
+$column: 8.3333vw;
+$column-half: calc(#{$column} / 2);
+$column-double: calc(#{$column} * 2);
+
+// Section Margins
+$block-margin: 6rem;
+
+%block-margin-top {
+  margin-top: $block-margin;
+}
+
+%block-margin-bottom {
+  margin-bottom: $block-margin;
+}
+
+%block-margin {
+  @extend %block-margin-top;
+  @extend %block-margin-bottom;
+  @include media-breakpoint-down(md) {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
+}
+.block-margin {
+  @extend %block-margin;
+}
+
+.container-fluid {
+  padding-left: $column;
+  padding-right: $column;
+  &.double-pad {
+    padding-left: $column-double;
+    padding-right: $column-double;
+    @include media-breakpoint-down(lg) {
+      padding-left: $column;
+      padding-right: $column;
+    }
+  }
+}
+
+%rect-bg {
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+$b-shadow: 0 0 30px rgba(#052147, .1);
+%rect-icon {
+  background-image: url('img/rect-icon.svg');
+  @extend %rect-bg;
+}
+%rect-group {
+  background-image: url('img/rect-group.svg');
+  @extend %rect-bg;
+}
+
+.card {
+  box-shadow: $b-shadow;
+  border-radius: 10px;
+  background-color: #fff;
+  padding: 1rem;
+}

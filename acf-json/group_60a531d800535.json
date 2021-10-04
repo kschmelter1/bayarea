@@ -1,0 +1,136 @@
+{
+    "key": "group_60a531d800535",
+    "title": "Page Options",
+    "fields": [
+        {
+            "key": "field_60a531e466e49",
+            "label": "Alternate Title",
+            "name": "alternate_title",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_60ad54934b308",
+            "label": "Custom Submenu",
+            "name": "custom_submenu",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "default": "Default",
+                "manual": "Manual",
+                "premade": "Premade"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "default",
+            "layout": "vertical",
+            "return_format": "value",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_60ac04e2f6fdc",
+            "label": "Submenu",
+            "name": "submenu",
+            "type": "repeater",
+            "instructions": "Manually choose the links that appear below the Page's title",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_60ad54934b308",
+                        "operator": "==",
+                        "value": "manual"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "",
+            "sub_fields": [
+                {
+                    "key": "field_60ac053bf6fdd",
+                    "label": "Link",
+                    "name": "link",
+                    "type": "link",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array"
+                }
+            ]
+        },
+        {
+            "key": "field_60ad540302a1b",
+            "label": "Choose Menu",
+            "name": "choose_menu",
+            "type": "menu",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_60ad54934b308",
+                        "operator": "==",
+                        "value": "premade"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "allow_null": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1621973017
+}
